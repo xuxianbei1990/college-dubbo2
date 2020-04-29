@@ -54,6 +54,7 @@ public class GameMsgHandler extends SimpleChannelInboundHandler {
 
         // 构建结果并发送
         GameMsgProtocol.UserEntryResult newResult = resultBuilder.build();
+        // 这玩意群发？
         CHANNEL_GROUP.writeAndFlush(newResult);
     }
 
