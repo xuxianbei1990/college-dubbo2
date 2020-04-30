@@ -43,8 +43,9 @@ public class ServerMain {
                         new WebSocketServerProtocolHandler("/websocket"),
                         //自定义消息解码
                         new GameMsgDecoder(),
-                        new GameMsgHandler(),
-                        new GameMsgEncoder()
+                        //编码是放到处理之前，因为是out
+                        new GameMsgEncoder(),
+                        new GameMsgHandler()
                 );
             }
         });
