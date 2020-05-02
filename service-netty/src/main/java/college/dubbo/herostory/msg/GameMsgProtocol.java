@@ -1630,23 +1630,23 @@ public final class GameMsgProtocol {
    *
    * Protobuf type {@code msg.WhoElseIsHereCmd}
    */
-  public  static final class WhoElseIsHereCmd extends
+  public  static final class WhoElseIsHeroCmd extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:msg.WhoElseIsHereCmd)
       WhoElseIsHereCmdOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use WhoElseIsHereCmd.newBuilder() to construct.
-    private WhoElseIsHereCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private WhoElseIsHeroCmd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private WhoElseIsHereCmd() {
+    private WhoElseIsHeroCmd() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new WhoElseIsHereCmd();
+      return new WhoElseIsHeroCmd();
     }
 
     @java.lang.Override
@@ -1654,7 +1654,7 @@ public final class GameMsgProtocol {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WhoElseIsHereCmd(
+    private WhoElseIsHeroCmd(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1701,7 +1701,7 @@ public final class GameMsgProtocol {
         internalGetFieldAccessorTable() {
       return college.dubbo.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.class, college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.Builder.class);
+              WhoElseIsHeroCmd.class, WhoElseIsHeroCmd.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1737,10 +1737,10 @@ public final class GameMsgProtocol {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd)) {
+      if (!(obj instanceof WhoElseIsHeroCmd)) {
         return super.equals(obj);
       }
-      college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd other = (college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd) obj;
+      WhoElseIsHeroCmd other = (WhoElseIsHeroCmd) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -1758,69 +1758,69 @@ public final class GameMsgProtocol {
       return hash;
     }
 
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(byte[] data)
+    public static WhoElseIsHeroCmd parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(java.io.InputStream input)
+    public static WhoElseIsHeroCmd parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseDelimitedFrom(java.io.InputStream input)
+    public static WhoElseIsHeroCmd parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseDelimitedFrom(
+    public static WhoElseIsHeroCmd parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parseFrom(
+    public static WhoElseIsHeroCmd parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1833,7 +1833,7 @@ public final class GameMsgProtocol {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd prototype) {
+    public static Builder newBuilder(WhoElseIsHeroCmd prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1871,7 +1871,7 @@ public final class GameMsgProtocol {
           internalGetFieldAccessorTable() {
         return college.dubbo.herostory.msg.GameMsgProtocol.internal_static_msg_WhoElseIsHereCmd_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.class, college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.Builder.class);
+                WhoElseIsHeroCmd.class, WhoElseIsHeroCmd.Builder.class);
       }
 
       // Construct using college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.newBuilder()
@@ -1902,13 +1902,13 @@ public final class GameMsgProtocol {
       }
 
       @java.lang.Override
-      public college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd getDefaultInstanceForType() {
-        return college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.getDefaultInstance();
+      public WhoElseIsHeroCmd getDefaultInstanceForType() {
+        return WhoElseIsHeroCmd.getDefaultInstance();
       }
 
       @java.lang.Override
-      public college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd build() {
-        college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd result = buildPartial();
+      public WhoElseIsHeroCmd build() {
+        WhoElseIsHeroCmd result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1916,8 +1916,8 @@ public final class GameMsgProtocol {
       }
 
       @java.lang.Override
-      public college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd buildPartial() {
-        college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd result = new college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd(this);
+      public WhoElseIsHeroCmd buildPartial() {
+        WhoElseIsHeroCmd result = new WhoElseIsHeroCmd(this);
         onBuilt();
         return result;
       }
@@ -1956,16 +1956,16 @@ public final class GameMsgProtocol {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd) {
-          return mergeFrom((college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd)other);
+        if (other instanceof WhoElseIsHeroCmd) {
+          return mergeFrom((WhoElseIsHeroCmd)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd other) {
-        if (other == college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd.getDefaultInstance()) return this;
+      public Builder mergeFrom(WhoElseIsHeroCmd other) {
+        if (other == WhoElseIsHeroCmd.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1981,11 +1981,11 @@ public final class GameMsgProtocol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd parsedMessage = null;
+        WhoElseIsHeroCmd parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd) e.getUnfinishedMessage();
+          parsedMessage = (WhoElseIsHeroCmd) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2011,37 +2011,37 @@ public final class GameMsgProtocol {
     }
 
     // @@protoc_insertion_point(class_scope:msg.WhoElseIsHereCmd)
-    private static final college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd DEFAULT_INSTANCE;
+    private static final WhoElseIsHeroCmd DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd();
+      DEFAULT_INSTANCE = new WhoElseIsHeroCmd();
     }
 
-    public static college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd getDefaultInstance() {
+    public static WhoElseIsHeroCmd getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WhoElseIsHereCmd>
-        PARSER = new com.google.protobuf.AbstractParser<WhoElseIsHereCmd>() {
+    private static final com.google.protobuf.Parser<WhoElseIsHeroCmd>
+        PARSER = new com.google.protobuf.AbstractParser<WhoElseIsHeroCmd>() {
       @java.lang.Override
-      public WhoElseIsHereCmd parsePartialFrom(
+      public WhoElseIsHeroCmd parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WhoElseIsHereCmd(input, extensionRegistry);
+        return new WhoElseIsHeroCmd(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<WhoElseIsHereCmd> parser() {
+    public static com.google.protobuf.Parser<WhoElseIsHeroCmd> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<WhoElseIsHereCmd> getParserForType() {
+    public com.google.protobuf.Parser<WhoElseIsHeroCmd> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public college.dubbo.herostory.msg.GameMsgProtocol.WhoElseIsHereCmd getDefaultInstanceForType() {
+    public WhoElseIsHeroCmd getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

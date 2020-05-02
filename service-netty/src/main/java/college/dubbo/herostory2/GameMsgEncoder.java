@@ -1,6 +1,5 @@
 package college.dubbo.herostory2;
 
-import college.dubbo.herostory.msg.GameMsgProtocol;
 import com.google.protobuf.GeneratedMessageV3;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -26,18 +25,13 @@ public class GameMsgEncoder extends ChannelOutboundHandlerAdapter {
             return;
         }
 
-        int msgCode = -1;
-        if (msg instanceof GameMsgProtocol.UserEntryResult) {
-            msgCode = GameMsgProtocol.MsgCode.USER_ENTRY_RESULT_VALUE;
-        } else if (msg instanceof GameMsgProtocol.WhoElseIsHereResult) {
-            msgCode = GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERE_RESULT_VALUE;
-        } else if (msg instanceof GameMsgProtocol.UserMoveToResult) {
-            msgCode = GameMsgProtocol.MsgCode.USER_MOVE_TO_RESULT_VALUE;
-        } else if (msg instanceof GameMsgProtocol.UserQuitResult) {
-            msgCode = GameMsgProtocol.MsgCode.USER_QUIT_RESULT_VALUE;
-        } else {
-            log.error("无法识别的消息类型： msgClazz = " + msg.getClass().getName());
+        // 获取消息编码
+        int msgCode = GameMsgRecognizer.getMsgCodeByMsgClazz(msg.getClass());
+        if (msgCode <= -1) {
+            log.error("无法识别的消息, msgClazz = {}", msg.getClass().getName());
+            return;
         }
+
         byte[] msgBody = ((GeneratedMessageV3) msg).toByteArray();
         ByteBuf byteBuf = ctx.alloc().buffer();
         //占位 2个字节

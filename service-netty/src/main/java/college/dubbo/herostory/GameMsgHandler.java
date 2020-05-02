@@ -48,7 +48,7 @@ public class GameMsgHandler extends SimpleChannelInboundHandler {
 
         if (msg instanceof GameMsgProtocol.UserEntryCmd) {
             doHandleUserEntryCmd(ctx, (GameMsgProtocol.UserEntryCmd) msg);
-        } else if (msg instanceof GameMsgProtocol.WhoElseIsHereCmd) {
+        } else if (msg instanceof GameMsgProtocol.WhoElseIsHeroCmd) {
             doHandleWhoElseIsHere(ctx);
         } else if (msg instanceof GameMsgProtocol.UserMoveToCmd) {
             doHandleUserMove(ctx, msg);

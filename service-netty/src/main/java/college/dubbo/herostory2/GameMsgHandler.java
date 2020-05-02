@@ -1,8 +1,11 @@
 package college.dubbo.herostory2;
 
 import college.dubbo.herostory.msg.GameMsgProtocol;
+import college.dubbo.herostory2.cmdHandler.CmdHandlerFactory;
+import college.dubbo.herostory2.cmdHandler.ICmdHandler;
 import college.dubbo.herostory2.model.User;
 import college.dubbo.herostory2.model.UserManager;
+import com.google.protobuf.GeneratedMessageV3;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -31,15 +34,18 @@ public class GameMsgHandler extends SimpleChannelInboundHandler {
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("收到客户端消息, msg = " + msg);
 
-        if (msg instanceof GameMsgProtocol.UserEntryCmd) {
-            doHandleUserEntryCmd(ctx, (GameMsgProtocol.UserEntryCmd) msg);
-        } else if (msg instanceof GameMsgProtocol.WhoElseIsHereCmd) {
-            doHandleWhoElseIsHere(ctx);
-        } else if (msg instanceof GameMsgProtocol.UserMoveToCmd) {
-            doHandleUserMove(ctx, msg);
-        } else if (msg instanceof BinaryWebSocketFrame) {
-            //HttpServerCodec 解码之后的
-            doHandleBinaryWebSocketFrame((BinaryWebSocketFrame) msg);
+        ICmdHandler<? extends GeneratedMessageV3> cmdHandler = CmdHandlerFactory.create(msg.getClass());
+        if (null != cmdHandler) {
+            cmdHandler.handle(ctx, cast(msg));
+        }
+
+    }
+
+    static private <TCmd extends GeneratedMessageV3> TCmd cast(Object msg) {
+        if (null == msg) {
+            return null;
+        } else {
+            return (TCmd) msg;
         }
     }
 

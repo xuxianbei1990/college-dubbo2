@@ -1,11 +1,11 @@
 package college.dubbo.herostory2;
 
-import college.dubbo.herostory.msg.GameMsgProtocol;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 消息解码器
@@ -15,6 +15,7 @@ import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
  * Time: 20:41
  * Version:V1.0
  */
+@Slf4j
 public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
 
     @Override
@@ -29,24 +30,24 @@ public class GameMsgDecoder extends ChannelInboundHandlerAdapter {
         //读取消息编号
         int msgCode = byteBuf.readShort();
 
+        // 获取消息构建者
+        Message.Builder msgBuilder = GameMsgRecognizer.getBuilderByMsgCode(msgCode);
+        if (null == msgBuilder) {
+            log.error("无法识别的消息, msgCode = {}", msgCode);
+            return;
+        }
+
         byte[] msgBody = new byte[byteBuf.readableBytes()];
         byteBuf.readBytes(msgBody);
 
-        GeneratedMessageV3 cmd = null;
-        switch (msgCode) {
-            case GameMsgProtocol.MsgCode.USER_ENTRY_CMD_VALUE:
-                cmd = GameMsgProtocol.UserEntryCmd.parseFrom(msgBody);
-                break;
-            case GameMsgProtocol.MsgCode.WHO_ELSE_IS_HERO_CMD_VALUE:
-                cmd = GameMsgProtocol.WhoElseIsHereCmd.parseFrom(msgBody);
-                break;
-            case GameMsgProtocol.MsgCode.USER_MOVE_TO_CMD_VALUE:
-                cmd = GameMsgProtocol.UserMoveToCmd.parseFrom(msgBody);
-                break;
-        }
+        msgBuilder.clear();
+        msgBuilder.mergeFrom(msgBody);
 
-        if (null != cmd) {
-            ctx.fireChannelRead(cmd);
+        // 构建消息
+        Message newMsg = msgBuilder.build();
+
+        if (null != newMsg) {
+            ctx.fireChannelRead(newMsg);
         }
     }
 }

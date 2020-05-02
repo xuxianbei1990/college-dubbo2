@@ -1,5 +1,6 @@
 package college.dubbo.herostory2;
 
+import college.dubbo.herostory2.cmdHandler.CmdHandlerFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -21,6 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ServerMain {
     public static void main(String[] args) {
+        CmdHandlerFactory.init();
+        GameMsgRecognizer.init();
         EventLoopGroup boos = new NioEventLoopGroup();
         EventLoopGroup work = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();
