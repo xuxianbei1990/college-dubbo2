@@ -3,6 +3,8 @@ package college.dubbo.ormtest.step002.entity;
 import java.sql.ResultSet;
 
 /**
+ *
+ * 如果还要进一步优化 ASM框架，动态编码java技术
  * 抽象的实体助手
  */
 public abstract class AbstractEntityHelper {
