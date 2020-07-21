@@ -1,0 +1,10 @@
+-XX:+PrintGCDetails
+-Xms4096m
+-Xmx4096m
+-XX:CMSInitiatingOccupancyFraction=85
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+UseConcMarkSweepGC
+-XX:-UseBiasedLocking
+-XX:LargePageSizeInBytes=8m
+-XX:+UseTLAB
+-XX:TLABWasteTargetPercent=15

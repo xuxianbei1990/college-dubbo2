@@ -35,7 +35,7 @@ public class ServerMain {
                                 new HttpServerCodec(),
                                 new HttpObjectAggregator(65535),
                                 new WebSocketServerProtocolHandler("/websocket"),
-//自定义消息解码
+                                //自定义消息解码
                                 new GameMsgDecoder(),
                                 //编码是放到处理之前，因为是out
                                 new GameMsgEncoder(),
