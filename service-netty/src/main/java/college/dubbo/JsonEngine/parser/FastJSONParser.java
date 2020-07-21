@@ -28,7 +28,7 @@ public class FastJSONParser implements IJSONParser {
             final String spuId = entrySet.getKey();
             final JSONObject spuIdAttr = (JSONObject) entrySet.getValue();
             final JSONObject kwScorePosJO = spuIdAttr.getJSONObject(KW_SCORE_POS_NAME);
-            kwScorePosJO.entrySet().forEach(kwScorePosEntrySet -> {
+            kwScorePosJO.entrySet().parallelStream().forEach(kwScorePosEntrySet -> {
                 final String key = kwScorePosEntrySet.getKey();
                 final JSONObject JO = (JSONObject) kwScorePosEntrySet.getValue();
                 SpuBean spuBean = new SpuBean(spuId, key,
