@@ -2,9 +2,7 @@ package college.dubbo.netty.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandler;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.*;
 import io.netty.util.CharsetUtil;
 
 /**
@@ -12,7 +10,7 @@ import io.netty.util.CharsetUtil;
  * Date: 2019/11/21
  * Time: 16:48
  * Version:V1.0
- *
+ * <p>
  * SimpleChannelInboundHandler 和 ChannelInboundHandlerAdapter 区别就是 SimpleChannelInboundHandler自
  * 动释放内存channelRead0；而ChannelInboundHandlerAdapter不会。
  * 那么为什么SimpleChannelInboundHandler需要自动释放，而ChannelInboundHandlerAdapter不用呢？
@@ -25,7 +23,12 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("hello netty!", CharsetUtil.UTF_8));
+        ChannelFuture channelFuture = ctx.writeAndFlush(Unpooled.copiedBuffer("hello netty!", CharsetUtil.UTF_8));
+        channelFuture.addListener((ChannelFutureListener) channelFuture1 -> {
+            if (channelFuture1.isSuccess()) {
+                System.out.println("success");
+            }
+        });
     }
 
     @Override
